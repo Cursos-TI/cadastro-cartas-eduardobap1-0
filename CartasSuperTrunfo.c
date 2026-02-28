@@ -18,7 +18,7 @@ int main() {
     //cadastro da carta 1//
     printf("Carta 1 \n");
 
-    printf("digite o estado (A até H): \n"); scanf("%s", &estado1);
+    printf("digite o estado (A até H): \n"); scanf("%c", &estado1);
     
     printf("Digite o coidgo da carta (ex: A01,B02): \n"); scanf("%s", codigo1);
 
