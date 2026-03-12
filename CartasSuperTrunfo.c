@@ -10,6 +10,7 @@ int main() {
     int pontos_turisticos1, pontos_turisticos2 ;
     unsigned long int populacao1, populacao2 ;
     int opc ;
+    int resultado_atb1, resultado_atb2;
 
     float area1, area2 ;
     float pib1, pib2 ;
@@ -19,6 +20,7 @@ int main() {
     char estado1[3], estado2[3];
     char codigo1[10], codigo2[10] ;
     char cidade1[30], cidade2[30], pais1[30],pais2[30];
+    char opc2, opc3;
 
   //Área para entrada de dados//
     printf("Cadastre suas cartas \n");
@@ -142,22 +144,22 @@ int main() {
 
       switch (opc) {
 case 1 :
-    printf("você escolheu população");
-    printf("país 1: %s", pais1);
-    printf("país 2: %s", pais2);
-    printf("população 1: %lu", populacao1);
-    printf("população 2: %lu", populacao2);
+    printf("você escolheu população \n");
+    printf("país 1: %s \n", pais1);
+    printf("país 2: %s \n", pais2);
+    printf("população 1: %lu \n", populacao1);
+    printf("população 2: %lu \n", populacao2);
   if (populacao1 > populacao2) {
     printf("carta 1 venceu \n");
   } else if (populacao1 < populacao2)
   {
     printf("a carta 2 venceu \n");
   } else {
-    printf("empatou");
+    printf("empatou \n");
   } 
  break;  
 case 2 :
-    printf("você escolheu Area");
+    printf("você escolheu Area \n");
     printf("país 1: %s \n", pais1);
     printf("país 2: %s \n", pais2);
     printf("Area 1: %f \n", area1);
@@ -173,7 +175,7 @@ case 2 :
  break; 
 
  case 3 :
-    printf("você escolheu PIB");
+    printf("você escolheu PIB \n");
     printf("país 1: %s \n", pais1);
     printf("país 2: %s \n", pais2);
     printf("PIB 1: %f \n", pib1);
@@ -184,7 +186,7 @@ case 2 :
   {
     printf("a carta 2 venceu \n");
   } else {
-    printf("empatou");
+    printf("empatou \n");
   } 
  break;
 
@@ -213,17 +215,89 @@ case 4 :
 
   if (d_populacional1 < d_populacional2) {
     printf("carta 1 venceu \n");
-  } else if (d_populacional1 > d_populacional2)
+  }else if (d_populacional1 > d_populacional2)
   {
     printf("a carta 2 venceu \n");
-  } else {
-    printf("empatou");
+  }else {
+    printf("empatou \n");
   } 
  break; 
  default: 
-    printf("N/A\n");
+    printf("N/A\n\n");
 
 }
+
+printf("*** Escolha dois atributos para comparar ***\n");
+printf("S. Super poder \n");
+printf("D. Densidade demografica \n");
+scanf(" %c", &opc2);
+
+switch(opc2) {
+
+case 'S':
+case 's':
+  printf("você escolheu Super poder\n");
+  resultado_atb1 = poder1 > poder2 ? 1 : 0 ;
+  printf(" super poder 1 : %f, super poder 2 : %f \n", poder1,poder2);
+  break;
+
+case 'D':
+case 'd':
+printf("Você escolheu Densidade demografica \n");
+resultado_atb1 = d_populacional1 < d_populacional2 ? 1:0 ;
+printf(" Densidade demografica 1 : %f, Densidade demografica 2 : %f \n", d_populacional1,d_populacional2);
+break;
+
+default:
+  printf("N/A \n");
+}
+
+printf("Selecione o segundo atributo \n");
+scanf(" %c", &opc3);
+
+if(opc2 == opc3) {
+  printf("Selecione um atributo diferente \n");
+} else {
+
+switch (opc3)
+{
+case 'S':
+case 's':
+  printf("você escolheu Super poder\n");
+  resultado_atb2 = poder1 > poder2 ? 1 : 0 ;
+  printf(" super poder 1 : %f, super poder 2 : %f \n", poder1,poder2);
+  break;
+
+case 'D':
+case 'd':
+printf("Você escolheu Densidade demografica \n");
+resultado_atb2 = d_populacional1 < d_populacional2 ? 1:0 ;
+printf(" Densidade demografica 1 : %f, Densidade demografica 2 : %f \n", d_populacional1,d_populacional2);
+break;
+default:
+printf("N/A \n");
+}
+
+if (resultado_atb1 && resultado_atb2)
+{
+ printf("A carta 1 venceu \n");
+} else if(resultado_atb1 != resultado_atb2)
+{
+  printf("empatou \n");
+}else 
+{
+  printf("A carta 2 venceu \n");
+}
+
+
+
+
+
+
+
+
+}
+
 
 
 
